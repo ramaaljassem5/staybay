@@ -1,5 +1,6 @@
 {
     "hello": "Hello"  ,
     "des": "why are we here ?",
-    "change language":"Change Language"
+    "change language":"Change Language",
+    "toggle theme":"Toggle Theme"
 }
