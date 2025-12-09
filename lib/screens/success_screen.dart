@@ -18,15 +18,6 @@ class SuccessScreen extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     final theme = Theme.of(context);
     final primaryColor = theme.primaryColor;
-
-    final String title = isLoginSuccess
-        ? 'Thank you, login succeeded!'
-        : 'Thank you, registration succeeded!';
-    final String buttonText = 'Go to Home Page';
-    final String secondaryText = isLoginSuccess
-        ? 'You have successfully logged into your account.'
-        : 'Your account has been created successfully.';
-
     return BlocBuilder<LocaleCubit, LocaleState>(
       builder: (context, state) {
         return Scaffold(
@@ -86,7 +77,9 @@ class SuccessScreen extends StatelessWidget {
                   SizedBox(height: screenHeight * 0.08),
 
                   CustomPrimaryButton(
-                    text: buttonText,
+                    text:
+                        state.localizedStrings['Success']['go to home page'] ??
+                        'Go to Home Page',
                     onPressed: () {
                       if (isLoginSuccess) {
                         Navigator.of(context).pushNamedAndRemoveUntil(
